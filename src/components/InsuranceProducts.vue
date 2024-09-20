@@ -27,7 +27,10 @@
                 <td>2024/10/10</td>
                 <td>2025/10/10</td>
                 <td>Y</td>
-                <td>N</td>
+                <td>
+                    <button type="button" class="btn btn-primary" @click="goToDetail">查看</button>
+                    <button type="button" class="btn btn-primary" @click="goToSuccess">購買</button>
+                </td>
                 </tr>
             </tbody>
         </table>
@@ -36,8 +39,16 @@
 </template>
 
 <script>
+import '@/assets/myStyle.css';
     export default {
-        
+        methods:{
+            goToDetail(){
+                this.$router.push({ path: `/detail` });
+            },
+            goToSuccess(){
+                this.$router.push({ path: `/success` });
+            }
+        }
     }
 </script>
 

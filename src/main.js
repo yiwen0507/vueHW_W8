@@ -8,6 +8,8 @@ import InsuranceProducts from './components/InsuranceProducts.vue';
 import AlreadyPurchased from './components/AlreadyPurchased.vue';
 import AboutNanshan from './components/AboutNanshan.vue';
 import NewsNanshan from './components/NewsNanshan.vue';
+import InsuranceDetail from './components/InsuranceDetail.vue';
+import PurchasedSuccess from './components/PurchasedSuccess.vue';
 
 // create router
 const router = createRouter({
@@ -20,6 +22,8 @@ const router = createRouter({
         { path: "/alreadypurchased", component: AlreadyPurchased},
         { path: "/news", component:NewsNanshan},
         { path: "/about", component: AboutNanshan},
+        { path: "/detail", component:InsuranceDetail},
+        { path: "/success", component:PurchasedSuccess},
     ]
 })
 const app = createApp(App)
