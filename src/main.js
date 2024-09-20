@@ -1,8 +1,22 @@
 import { createApp } from 'vue';
 import App from './App.vue';
 import '@/assets/myStyle.css'; // Importing global CSS
+import { createRouter, createWebHistory } from 'vue-router'
+import NanshanIndex from './components/NanshanIndex.vue';
+import HomePage from './components/HomePage.vue';
 
-createApp(App).mount('#app');
+// create router
+const router = createRouter({
+    history: createWebHistory(),
+    routes: [
+        { path: "/", component: NanshanIndex },
+        { path: "/homepage", component: HomePage }
+    ]
+})
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
+
 // 自 body 向下綁定 click 事件
 document.body.addEventListener('click', (event) => {
     // 確保事件是發生在目標元素上

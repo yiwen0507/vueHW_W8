@@ -1,5 +1,6 @@
 <template>
-  <NanshanIndex msg="Welcome to Your Vue.js App"/>
+  <NanshanIndex/>
+  <RouterView></RouterView>
 </template>
 
 <script>
