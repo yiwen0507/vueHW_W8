@@ -5,6 +5,9 @@ import { createRouter, createWebHistory } from 'vue-router'
 import NanshanIndex from './components/NanshanIndex.vue';
 import HomePage from './components/HomePage.vue';
 import InsuranceProducts from './components/InsuranceProducts.vue';
+import AlreadyPurchased from './components/AlreadyPurchased.vue';
+import AboutNanshan from './components/AboutNanshan.vue';
+import NewsNanshan from './components/NewsNanshan.vue';
 
 // create router
 const router = createRouter({
@@ -12,7 +15,11 @@ const router = createRouter({
     routes: [
         { path: "/", component: NanshanIndex },
         { path: "/homepage", component: HomePage },
-        { path: "/products", component: InsuranceProducts}
+        { path: "/products", component: InsuranceProducts},
+        { path: "/insuranceproduct", component: InsuranceProducts},
+        { path: "/alreadypurchased", component: AlreadyPurchased},
+        { path: "/news", component:NewsNanshan},
+        { path: "/about", component: AboutNanshan},
     ]
 })
 const app = createApp(App)

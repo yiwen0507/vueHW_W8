@@ -1,0 +1,27 @@
+<template>
+    <div>
+    <main>
+        <h1>關於南山</h1>
+        <p>
+          南山人壽致力於為客戶提供專業的保險服務與投資理財建議。我們的產品涵蓋了壽險、醫療險、意外險等多種保險方案，滿足您和家人的需求。
+        </p>
+        <p>
+          我們重視每一位客戶，並以客戶為中心，為您提供貼心的服務與支持。
+        </p>
+      </main>
+    </div>
+  </template>
+  
+  <script>
+  //CSS
+  import '@/assets/myStyle.css';
+  
+  export default {
+    data() {
+      return {
+        logo: require('@/assets/images/NanShan-Logo.jpeg'), // Image path
+      };
+    },
+  };
+  </script>
+  

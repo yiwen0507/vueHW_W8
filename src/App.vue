@@ -12,8 +12,8 @@
     </header>
 
     <div class="breadcrumbs">
-      <a href="#">首頁</a> &gt;
-      <a href="#">保險商品</a> &gt;
+      <RouterLink to="/homepage">首頁</RouterLink> &gt;
+      <RouterLink to="/products">保險商品</RouterLink> &gt;
       產品詳情
     </div>
 
@@ -23,8 +23,9 @@
         <ul>
           <li><RouterLink to="/homepage">首頁</RouterLink></li>
           <li><RouterLink to="/products">保險商品</RouterLink></li>
-          <li><a href="#">投資理財</a></li>
-          <li><a href="#">最新消息</a></li>
+          <li><RouterLink to="/alreadypurchased">已購保單</RouterLink></li>
+          <li><RouterLink to="/news">最新消息</RouterLink></li>
+          <li><RouterLink to="/about">關於南山</RouterLink></li>
         </ul>
       </aside>
 
