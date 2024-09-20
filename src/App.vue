@@ -3,9 +3,9 @@
     <header>
       <img :src="logo" width="5%" alt="Logo" />
       <nav>
-        <a href="#">首頁</a>
-        <a href="#">保險商品</a>
-        <a href="#">關於我們</a>
+        <RouterLink to="/homepage">首頁</RouterLink>
+        <RouterLink to="/products">保險商品</RouterLink>
+        <RouterLink to="/about">關於我們</RouterLink>
         <a href="#">聯絡我們</a>
       </nav>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">

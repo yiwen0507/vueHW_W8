@@ -13,15 +13,5 @@
   </template>
   
   <script>
-  //CSS
-  import '@/assets/myStyle.css';
-  
-  export default {
-    data() {
-      return {
-        logo: require('@/assets/images/NanShan-Logo.jpeg'), // Image path
-      };
-    },
-  };
   </script>
   

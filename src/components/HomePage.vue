@@ -10,9 +10,7 @@
 </template>
  
 <script>
-//CSS
-import '@/assets/myStyle.css';
-
-export default {
-};
+  export default {
+    
+  };
 </script>
