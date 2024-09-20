@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card</title>
+    <style>
+      .policy-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start; /* 修改為從左對齊 */
+      }
+    
+      .renewal-message {
+        background-color: #FFEBEE; /* 淡紅色背景 */
+        border-left: 6px solid #F44336; /* 深紅色邊框 */
+        padding: 10px 20px;
+        margin: 20px 0;
+        border-radius: 4px;
+        color: #D32F2F; /* 深紅色文字 */
+      }
+    
+      .policy-card {
+        background-color: white; /* 白色底色 */
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px; /* 調整卡片寬度以便並排 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    
+      .policy-card h2 {
+        color: #FF9800; /* 橘色標題 */
+        font-size: 1.2rem;
+        margin-bottom: 10px;
+      }
+    
+      .policy-card p {
+        font-size: 0.9rem;
+        color: #616161;
+        margin: 10px 0;
+      }
+    
+      .policy-card ul {
+        list-style-type: none;
+        padding: 0;
+      }
+    
+      .policy-card li {
+        font-size: 0.9rem;
+        color: #212121;
+        margin: 5px 0;
+      }
+    
+      .policy-card li strong {
+        color: #03A9F4; /* 藍色強調 */
+      }
+    
+      .policy-card::before {
+        content: "";
+        display: block;
+        height: 4px;
+        width: 100%;
+        background: linear-gradient(90deg, #4CAF50, #03A9F4); /* 綠藍漸層條 */
+        border-radius: 10px 10px 0 0;
+        margin-bottom: 10px;
+      }
+    
+      .policy-card:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+    
+      @media (max-width: 768px) {
+        .policy-card {
+          width: 100%; /* 小螢幕時卡片佔滿整行 */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="policy-container">
+      <div class="policy-card">
+        <h2>20NNPL - 南山人壽新康順終身保險</h2>
+        <p>一般壽險/投保年齡0-60歲/保障終身</p>
+        <ul>
+          <li><strong>年繳保費：</strong> 321 元</li>
+          <li><strong>保障金額：</strong> 1000000 元</li>
+          <li><strong>售賣起日：</strong> 2021-01-01</li>
+          <li><strong>售賣訖日：</strong> 2026-01-01</li>
+          <li><strong>保證續保：</strong> 否</li>
+          <li>
+            <strong>提前續保：</strong>
+            <button type="button">我要申請</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

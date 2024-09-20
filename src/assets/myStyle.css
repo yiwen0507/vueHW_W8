@@ -1,0 +1,176 @@
+/* 基本樣式 */
+body {
+    margin: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f4f4f4; /* 淺灰色背景 */
+    color: #333;
+}
+/* 頁首 */
+header {
+    background: linear-gradient(
+        90deg,
+        rgba(33, 97, 174, 1) 0%,
+        rgba(104, 184, 50, 1) 100%
+    ); /* 藍綠漸層背景 */
+    color: white;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+header h1 {
+    margin: 0;
+    font-size: 26px;
+}
+nav {
+    display: flex;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+nav a:hover {
+    color: rgba(249, 192, 2, 1); /* 黃色 hover 效果 */
+}
+/* 麵包屑導航 */
+.breadcrumbs {
+    background-color: rgba(249, 192, 2, 0.7); /* 黃色背景 */
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #333;
+}
+.breadcrumbs a {
+    color: rgba(33, 97, 174, 1); /* 藍色 */
+    text-decoration: none;
+}
+.breadcrumbs a:hover {
+    text-decoration: underline;
+}
+/* 主要佈局 */
+#container {
+    display: flex;
+    min-height: 100vh;
+    margin-top: 10px;
+    position: relative; /* 為了定位按鈕 */
+}
+/* 側邊欄 */
+aside {
+    background: linear-gradient(
+        180deg,
+        rgba(33, 97, 174, 1) 0%,
+        rgba(104, 184, 50, 1) 100%
+    ); /* 垂直藍綠漸層背景 */
+    color: white;
+    width: 220px;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease; /* 加入平滑的過渡效果 */
+}
+aside.collapsed {
+    transform: translateX(-220px); /* 隱藏側邊欄 */
+}
+aside h2 {
+    font-size: 18px;
+    border-bottom: 2px solid rgba(249, 192, 2, 1); /* 黃色底線 */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+aside ul {
+    list-style-type: none;
+    padding: 0;
+}
+aside ul li {
+    margin-bottom: 15px;
+}
+aside ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+aside ul li a:hover {
+    color: rgba(249, 192, 2, 1); /* 黃色 hover 效果 */
+}
+/* 收合按鈕 */
+#toggle-sidebar {
+    position: absolute;
+    top: 20px;
+    left: 220px;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(249, 192, 2, 0.9);
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, left 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    z-index: 1000;
+}
+/* 當側邊欄收合時，調整按鈕位置和內容 */
+#container.collapsed #toggle-sidebar {
+    left: 0px;
+}
+#toggle-sidebar:hover {
+    background-color: rgba(233, 207, 121, 0.8); /* 按鈕 hover 效果 */
+}
+/* 主要內容區 */
+main {
+    flex-grow: 1;
+    padding: 40px;
+    background-color: white;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+main h1 {
+    font-size: 24px;
+    color: rgba(33, 97, 174, 1); /* 藍色標題 */
+    margin-bottom: 20px;
+}
+main p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+}
+/* 頁腳 */
+footer {
+    background: linear-gradient(
+        90deg,
+        rgba(104, 184, 50, 1) 0%,
+        rgba(33, 97, 174, 1) 100%
+    ); /* 綠藍漸層背景 */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 14px;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+/* 響應式設計 */
+@media (max-width: 768px) {
+    #container {
+        flex-direction: column;
+    }
+    aside {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    #toggle-sidebar {
+        left: 100%; /* 調整按鈕在響應式下的位置 */
+        transform: translateX(-50%);
+    }
+    #container.collapsed #toggle-sidebar {
+        left: 0%;
+    }
+}
