@@ -8,6 +8,7 @@
         <a href="#">關於我們</a>
         <a href="#">聯絡我們</a>
       </nav>
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </header>
 
     <div class="breadcrumbs">
@@ -21,7 +22,7 @@
         <h2>快速導航</h2>
         <ul>
           <li><RouterLink to="/homepage">首頁</RouterLink></li>
-          <li><a href="#">保險商品</a></li>
+          <li><RouterLink to="/products">保險商品</RouterLink></li>
           <li><a href="#">投資理財</a></li>
           <li><a href="#">最新消息</a></li>
         </ul>
@@ -51,15 +52,3 @@ export default {
   },
 };
 </script>
-
-<!-- 
-<script>
-import NanshanIndex from './components/NanshanIndex.vue';
-
-export default {
-  name: 'App',
-  components: {
-    NanshanIndex
-  }
-}
-</script> -->

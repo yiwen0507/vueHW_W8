@@ -4,13 +4,15 @@ import '@/assets/myStyle.css'; // Importing global CSS
 import { createRouter, createWebHistory } from 'vue-router'
 import NanshanIndex from './components/NanshanIndex.vue';
 import HomePage from './components/HomePage.vue';
+import InsuranceProducts from './components/InsuranceProducts.vue';
 
 // create router
 const router = createRouter({
     history: createWebHistory(),
     routes: [
         { path: "/", component: NanshanIndex },
-        { path: "/homepage", component: HomePage }
+        { path: "/homepage", component: HomePage },
+        { path: "/products", component: InsuranceProducts}
     ]
 })
 const app = createApp(App)
