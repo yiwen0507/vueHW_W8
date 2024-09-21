@@ -3,7 +3,7 @@
         <main>
             <h1>SUCCESS</h1>
             <p>該頁將在 <span>{{count}}</span> 秒後自動跳轉 </p>
-            <router-link to="/insuranceproduct">回到保險商品</router-link>
+            <!-- <router-link to="/insuranceproduct">回到保險商品</router-link> -->
         </main>
     </div>
 </template>
@@ -12,7 +12,7 @@
     export default {
         data () {
             return {
-                count: 6
+                count: 3
             }
         },
         methods: {
