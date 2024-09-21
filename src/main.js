@@ -27,6 +27,23 @@ const router = createRouter({
         { path: "/purchasedsuccess", component:PurchasedSuccess},
         { path: "/applysuccess", component:ApplySuccess}
     ]
+    // routes:[
+    //     {
+    //         path:'/',
+    //         components:{
+    //             default: NanshanIndex,
+    //             homepage: HomePage,
+    //             products: InsuranceProducts,
+    //             insuranceproduct: InsuranceProducts,
+    //             alreadypurchased: AlreadyPurchased,
+    //             news: NewsNanshan,
+    //             about: AboutNanshan,
+    //             detail: InsuranceDetail,
+    //             purchasedsuccess: PurchasedSuccess,
+    //             applysuccess: ApplySuccess,
+    //         }
+    //     }
+    // ]
 })
 const app = createApp(App)
 app.use(router)

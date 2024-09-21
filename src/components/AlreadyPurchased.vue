@@ -3,6 +3,8 @@
       <main>
         <div class="policy-container">
           <div class="policy-card">
+            <RouterView></RouterView>
+
             <h2>20NNPL - 南山人壽新康順終身保險</h2>
             <p>一般壽險/投保年齡0-60歲/保障終身</p>
             <ul>
@@ -13,7 +15,7 @@
               <li><strong>保證續保：</strong> 否</li>
               <li>
                 <strong>提前續保：</strong>
-                <button type="button">我要申請</button>
+                 <button><RouterLink to="/applysuccess">我要申請</RouterLink></button>
               </li>
             </ul>
           </div>
@@ -24,5 +26,6 @@
   
   <script>
   import '@/assets/cardStyle.css';
-  export default {};
+  export default {
+  };
   </script>

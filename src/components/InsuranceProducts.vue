@@ -46,7 +46,7 @@ import '@/assets/myStyle.css';
                 this.$router.push({ path: `/detail` });
             },
             goToSuccess(){
-                this.$router.push({ path: `/success` });
+                this.$router.push({ path: `/purchasedsuccess` });
             }
         }
     }
