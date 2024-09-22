@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>申請完成</h1>
+        <h4 class="red-text">申請完成</h4>
     </div>
 </template>
 
@@ -11,5 +11,7 @@
 </script>
 
 <style lang="scss" scoped>
-
+.red-text {
+    color: red;
+}
 </style>

@@ -1,10 +1,10 @@
 <template>
     <div>
       <main>
+        <h1>已購買保單</h1>
+        <RouterView></RouterView>
         <div class="policy-container">
           <div class="policy-card">
-            <RouterView></RouterView>
-
             <h2>20NNPL - 南山人壽新康順終身保險</h2>
             <p>一般壽險/投保年齡0-60歲/保障終身</p>
             <ul>
@@ -15,7 +15,7 @@
               <li><strong>保證續保：</strong> 否</li>
               <li>
                 <strong>提前續保：</strong>
-                 <button><RouterLink to="/applysuccess">我要申請</RouterLink></button>
+                <button @click="goToApply">我要申請</button>
               </li>
             </ul>
           </div>
@@ -27,5 +27,10 @@
   <script>
   import '@/assets/cardStyle.css';
   export default {
-  };
+  methods: {
+    goToApply() {
+      this.$router.push({ name: 'apply' });
+    }
+  }
+};
   </script>

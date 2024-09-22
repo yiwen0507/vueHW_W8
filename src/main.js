@@ -20,7 +20,17 @@ const router = createRouter({
         { path: "/homepage", component: HomePage },
         { path: "/products", component: InsuranceProducts},
         { path: "/insuranceproduct", component: InsuranceProducts},
-        { path: "/alreadypurchased", component: AlreadyPurchased},
+        {
+            path: '/alreadypurchased',
+            component: AlreadyPurchased,
+            children: [
+              {
+                path: 'applysuccess',
+                component: ApplySuccess, // Nested route to ApplySuccess.vue
+                name: 'apply',
+              },
+            ],
+          },
         { path: "/news", component:NewsNanshan},
         { path: "/about", component: AboutNanshan},
         { path: "/detail", component:InsuranceDetail},
