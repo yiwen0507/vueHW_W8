@@ -2,7 +2,7 @@
     <div>
         <main>
             <div>
-                <h1>保單詳情[]</h1>
+                <h1>保單詳情-[{{productCode }}_{{productName }}]</h1>
                 <button type="button" class="btn btn-primary" @click="goBack">回前頁</button>
             </div>
             <div>
@@ -19,6 +19,15 @@ import '@/assets/myStyle.css';
         methods:{
             goBack(){
                 this.$router.push({ path: `/insuranceproduct` });
+            }
+        },
+        computed: {
+            // 通过 query 获取传递的参数
+            productCode() {
+                return this.$route.query.code;
+            },
+            productName () {
+                return this.$route.query.name;
             }
         }
     }

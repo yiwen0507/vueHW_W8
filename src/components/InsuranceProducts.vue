@@ -17,18 +17,20 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                <td>1</td>
-                <td>111</td>
-                <td>test</td>
-                <td>for test</td>
-                <td>111</td>
-                <td>123</td>
-                <td>2024/10/10</td>
-                <td>2025/10/10</td>
-                <td>Y</td>
+                <tr v-for="(product, index) in products" :key="index">
+                <td>{{ index + 1 }}</td>
+                <td>{{ product.policyCode }}</td>
+                <td>{{ product.policyName }}</td>
+                <td>{{ product.policyDesc }}</td>
+                <td>{{ product.pricePerYear }}</td>
+                <td>{{ product.coverage }}</td>
+                <td>{{ product.startDate }}</td>
+                <td>{{ product.endDate }}</td>
+                <td :class="{'green-text': product.guaranteedRenewal === '是', 'red-text': product.guaranteedRenewal === '否'}">
+                    {{ product.guaranteedRenewal }}
+                </td>
                 <td>
-                    <button type="button" class="btn btn-primary" @click="goToDetail">查看</button>
+                    <button type="button" class="btn btn-primary" @click="goToDetail(product.policyCode, product.policyName)">查看</button>
                     <button type="button" class="btn btn-primary" @click="goToSuccess">購買</button>
                 </td>
                 </tr>
@@ -41,11 +43,44 @@
 <script>
 import '@/assets/myStyle.css';
     export default {
-        methods:{
-            goToDetail(){
-                this.$router.push({ path: `/detail` });
+        data() {
+            return {
+                //保單資料
+                products: [
+                    {
+                        policyCode: '南山人壽新健康終身保險',
+                        policyName : '20NNPL',
+                        policyDesc: 'for test',
+                        pricePerYear: '111NTD',
+                        coverage: '123萬',
+                        startDate: '2024/10/10',
+                        endDate: '2025/10/10',
+                        guaranteedRenewal: '是',
+                    },
+                    {
+                        policyCode: '南山人壽意外傷害險',
+                        policyName : 'DHI',
+                        policyDesc: '意外給付',
+                        pricePerYear: '123NTD',
+                        coverage: '1000萬',
+                        startDate: '2024/10/10',
+                        endDate: '2025/10/10',
+                        guaranteedRenewal: '否',
+                    },
+                ]
+            };
+        },
+        methods: {
+            goToDetail(policyCode, policyName) {
+                this.$router.push({ 
+                    path: `/detail`, 
+                    query: { 
+                        code: policyCode, 
+                        name: policyName 
+                    } 
+                });
             },
-            goToSuccess(){
+            goToSuccess() {
                 this.$router.push({ path: `/purchasedsuccess` });
             }
         }
@@ -53,5 +88,10 @@ import '@/assets/myStyle.css';
 </script>
 
 <style lang="scss" scoped>
-
+.red-text {
+    color: red;
+}
+.green-text{
+    color: green;
+}
 </style>
