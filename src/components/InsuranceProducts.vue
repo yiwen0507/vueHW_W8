@@ -94,7 +94,6 @@ import '@/assets/myStyle.css';
                 });
             },
             goToSuccess(product) {
-
                 this.$router.push({ 
                     path: `/purchasedsuccess`,
                     query:{
