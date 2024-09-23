@@ -31,7 +31,7 @@
                 </td>
                 <td>
                     <button type="button" class="btn btn-primary" @click="goToDetail(product)">查看</button>
-                    <button type="button" class="btn btn-primary" @click="goToSuccess(product.policyName)">購買</button>
+                    <button type="button" class="btn btn-primary" @click="goToSuccess(product)">購買</button>
                 </td>
                 </tr>
             </tbody>
@@ -57,9 +57,9 @@ import '@/assets/myStyle.css';
                         endDate: '2025/10/10',
                         guaranteedRenewal: '是',
                         policyDetail: {
-                            detail_1: '11111_1',
-                            detail_2: '22222_1',
-                            detail_3: '33333_1'
+                            detail_1: '身故給付，保障金額100萬',
+                            detail_2: '意外身故給付，保障金額為200萬',
+                            detail_3: '全殘給付，保障金額為220萬'
                         }
                     },
                     {
@@ -93,11 +93,12 @@ import '@/assets/myStyle.css';
                     } 
                 });
             },
-            goToSuccess(policyName) {
+            goToSuccess(product) {
+
                 this.$router.push({ 
                     path: `/purchasedsuccess`,
                     query:{
-                        name: policyName,
+                        name: product.policyName,
                     }
                 });
             }
