@@ -2,12 +2,13 @@
     <div>
         <main>
             <div>
-                <h1>保單詳情-[{{productCode }}_{{productName }}]</h1>
+                <h1>保單詳情-【{{productCode }}_{{productName }}】</h1>
                 <button type="button" class="btn btn-primary" @click="goBack">回前頁</button>
             </div>
             <div>
-                <p>身故給付</p>
-                <p>意外給付</p>
+                <ul v-for="(detail, index) in details" :key="index">
+                    <li>{{ detail }}</li>
+                </ul>
             </div>
         </main>
     </div>
@@ -22,12 +23,19 @@ import '@/assets/myStyle.css';
             }
         },
         computed: {
-            // 通过 query 获取传递的参数
+            // query傳遞參數
             productCode() {
                 return this.$route.query.code;
             },
             productName () {
                 return this.$route.query.name;
+            },
+            details() {
+                const detail_1 = this.$route.query.detail_1 || '';
+                const detail_2 = this.$route.query.detail_2 || '';
+                const detail_3 = this.$route.query.detail_3 || '';
+                // detail組成組數
+                return [detail_1, detail_2, detail_3].filter(detail => detail !== '');
             }
         }
     }
