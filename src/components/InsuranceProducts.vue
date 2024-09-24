@@ -1,7 +1,7 @@
 <template>
     <div>
         <main>
-        <table class="table table-striped">
+        <table class="table table-bordered">
             <thead>
                 <tr>
                 <th>#</th>
@@ -18,14 +18,14 @@
             </thead>
             <tbody>
                 <tr v-for="(product, index) in products" :key="index">
-                <td>{{ index + 1 }}</td>
-                <td>{{ product.policyCode }}</td>
-                <td>{{ product.policyName }}</td>
-                <td>{{ product.policyDesc }}</td>
-                <td>{{ product.pricePerYear }}</td>
-                <td>{{ product.coverage }}</td>
-                <td>{{ product.startDate }}</td>
-                <td>{{ product.endDate }}</td>
+                <td><p>{{ index + 1 }}</p></td>
+                <td><p>{{ product.policyCode }}</p></td>
+                <td><p>{{ product.policyName }}</p></td>
+                <td><p>{{ product.policyDesc }}</p></td>
+                <td><p>{{ product.pricePerYear }}</p></td>
+                <td><p>{{ product.coverage }}</p></td>
+                <td><p>{{ product.startDate }}</p></td>
+                <td><p>{{ product.endDate }}</p></td>
                 <td :class="{'green-text': product.guaranteedRenewal === '是', 'red-text': product.guaranteedRenewal === '否'}">
                     {{ product.guaranteedRenewal }}
                 </td>
@@ -50,32 +50,33 @@ import '@/assets/myStyle.css';
                     {
                         policyCode: '20NNPL',
                         policyName : '南山人壽新健康終身保險',
-                        policyDesc: 'for test',
+                        policyDesc: '一般壽險/投保年齡0-60/保障終身',
                         pricePerYear: '111NTD',
                         coverage: '123萬',
                         startDate: '2024/10/10',
                         endDate: '2025/10/10',
                         guaranteedRenewal: '是',
-                        policyDetail: {
-                            detail_1: '身故給付，保障金額100萬',
-                            detail_2: '意外身故給付，保障金額為200萬',
-                            detail_3: '全殘給付，保障金額為220萬'
-                        }
+                        policyDetail:[
+                            "身故給付，保障金額100萬",
+                            "意外身故給付，保障金額為200萬",
+                            "全殘給付，保障金額為220萬",
+                        ]
                     },
                     {
                         policyCode: 'DHI',
                         policyName : '南山人壽意外傷害險',
-                        policyDesc: '意外給付',
+                        policyDesc: '意外日額/投保年齡0-64/最高保障至75歲',
                         pricePerYear: '123NTD',
                         coverage: '1000萬',
                         startDate: '2024/10/10',
                         endDate: '2025/10/10',
                         guaranteedRenewal: '否',
-                        policyDetail: {
-                            detail_1: '11111_2',
-                            detail_2: '22222_2',
-                            detail_3: '33333_2'
-                        }
+                        policyDetail:[
+                            "1111",
+                            "2222",
+                            "3333",
+                            "4444"
+                        ]
                     },
                 ]
             };
@@ -87,9 +88,7 @@ import '@/assets/myStyle.css';
                     query: { 
                         code: product.policyCode, 
                         name: product.policyName ,
-                        detail_1: product.policyDetail.detail_1 || '', // 防止 undefined 错误
-                        detail_2: product.policyDetail.detail_2 || '',
-                        detail_3: product.policyDetail.detail_3 || '',
+                        details: product.policyDetail
                     } 
                 });
             },

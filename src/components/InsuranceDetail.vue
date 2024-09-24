@@ -7,7 +7,7 @@
         </div>
         <div>
           <ul v-for="(detail, index) in details" :key="index">
-            <p>{{ detail }}</p>
+            <main><strong>{{ detail }}</strong></main>
           </ul>
         </div>
       </main>
@@ -30,10 +30,8 @@
         return this.$route.query.name;
       },
       details() {
-        const detail_1 = this.$route.query.detail_1 || '';
-        const detail_2 = this.$route.query.detail_2 || '';
-        const detail_3 = this.$route.query.detail_3 || '';
-        return [detail_1, detail_2, detail_3].filter(detail => detail !== '');
+        // this.$route.query.details;
+        return this.$route.query.details
       }
     }
   }
