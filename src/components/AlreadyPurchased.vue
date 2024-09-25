@@ -15,7 +15,8 @@
               <li><strong>保證續保：</strong> {{ product.guaranteedRenewal }}</li>
               <li v-show="product.guaranteedRenewal === '是'">
                 <strong>提前續保：</strong>
-                <button @click="goToApply(product.policyName)">我要申請</button>
+                <button v-show="product.applyClick === '否'" @click="goToApply(product)">我要申請</button>
+                <button disabled v-show="product.applyClick === '是'">已經申請</button>
               </li>
             </ul>
           </div>
@@ -29,30 +30,6 @@
   export default {
     data(){
       return {
-        // //保單資料
-        // products: [
-        //     {
-        //         policyCode: '20NNPL',
-        //         policyName : '南山人壽新健康終身保險',
-        //         policyDesc: '一般壽險/投保年齡0-60歲/保障終身',
-        //         pricePerYear: '321 元',
-        //         coverage: '1000000 元',
-        //         startDate: '2021-01-01',
-        //         endDate: '2026-01-01',
-        //         guaranteedRenewal: '是',
-        //     },
-        //     {
-        //         policyCode: 'DHI',
-        //         policyName : '南山人壽意外傷害險',
-        //         policyDesc: '意外給付',
-        //         pricePerYear: '123NTD',
-        //         coverage: '1000萬',
-        //         startDate: '2024/10/10',
-        //         endDate: '2025/10/10',
-        //         guaranteedRenewal: '否',
-        //     },
-        // ]
-
         products: []
       };
     },
@@ -65,11 +42,23 @@
       this.products = purchasedPolicies;
     },
     methods: {
-      goToApply(policyName) {
+      /**
+       * 更新sessionStorage
+       * 顯示申請成功資訊
+       */
+      goToApply(product) {
+        const updatedPolicies = this.products.map((p) => {
+          if (p.policyCode === product.policyCode) {
+            p.applyClick = '是';
+          }
+          return p;
+        });
+        sessionStorage.setItem('purchasedPolicies', JSON.stringify(updatedPolicies));
+
         this.$router.push(
           { name: 'apply',
             query:{
-              name: policyName
+              name: product.policyName
             }
           });
       }

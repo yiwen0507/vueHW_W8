@@ -59,7 +59,8 @@ import '@/assets/myStyle.css';
                             "身故給付，保障金額100萬",
                             "意外身故給付，保障金額為200萬",
                             "全殘給付，保障金額為220萬",
-                        ]
+                        ],
+                        applyClick: '否'
                     },
                     {
                         policyCode: 'DHI',
@@ -69,13 +70,14 @@ import '@/assets/myStyle.css';
                         coverage: '1000萬',
                         startDate: '2024/10/10',
                         endDate: '2025/10/10',
-                        guaranteedRenewal: '否',
+                        guaranteedRenewal: '是',
                         policyDetail:[
                             "1111",
                             "2222",
                             "3333",
                             "4444"
-                        ]
+                        ],
+                        applyClick: '否'
                     },
                 ]
             };
