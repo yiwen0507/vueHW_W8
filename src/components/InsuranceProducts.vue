@@ -45,7 +45,6 @@ import '@/assets/myStyle.css';
     export default {
         data() {
             return {
-                //保單資料
                 products: [
                     {
                         policyCode: '20NNPL',
@@ -92,7 +91,18 @@ import '@/assets/myStyle.css';
                     } 
                 });
             },
+            /**
+             * 先取得當前的session內容 -> sessionStorage.getItem()
+             * 使用 JSON.parse() 將這個字串轉換回 JavaScript 的物件或陣列
+             * session只能存字串 -> 需要將物件先轉字串再存進session
+             * JSON.stringify() 將 JavaScript 的物件或陣列轉換成 JSON 格式的字串
+             * 將新增後的狀態存入session -> sessionStorage.setItem
+             */
             goToSuccess(product) {
+                let purchasedPolicies = JSON.parse(sessionStorage.getItem('purchasedPolicies')) || [];
+                purchasedPolicies.push(product);
+                sessionStorage.setItem('purchasedPolicies', JSON.stringify(purchasedPolicies));
+
                 this.$router.push({ 
                     path: `/purchasedsuccess`,
                     query:{
