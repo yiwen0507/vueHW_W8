@@ -27,7 +27,7 @@
                 <td><p>{{ product.startDate }}</p></td>
                 <td><p>{{ product.endDate }}</p></td>
                 <td :class="{'green-text': product.guaranteedRenewal === '是', 'red-text': product.guaranteedRenewal === '否'}">
-                    {{ product.guaranteedRenewal }}
+                    <strong>{{ product.guaranteedRenewal }}</strong>
                 </td>
                 <td>
                     <button type="button" class="btn btn-primary" @click="goToDetail(product)">查看</button>
@@ -67,15 +67,15 @@ import '@/assets/myStyle.css';
                         policyName : '南山人壽意外傷害險',
                         policyDesc: '意外日額/投保年齡0-64/最高保障至75歲',
                         pricePerYear: '123NTD',
-                        coverage: '1000萬',
+                        coverage: '200萬',
                         startDate: '2024/10/10',
                         endDate: '2025/10/10',
-                        guaranteedRenewal: '是',
+                        guaranteedRenewal: '否',
                         policyDetail:[
-                            "1111",
-                            "2222",
-                            "3333",
-                            "4444"
+                            "意外身故保險金或喪葬費用保險金，保障金額200萬",
+                            "意外重大燒燙傷保險金，保障金額50萬",
+                            "天然災害意外身故保險金或喪葬費用保險金，保障金額200萬",
+                            "特定交通事故重大創傷保險金，保障金額20萬"
                         ],
                         applyClick: '否'
                     },

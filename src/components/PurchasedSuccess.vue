@@ -1,14 +1,13 @@
 <template>
     <div>
         <main class="centered-content">
-            <h2>{{ productName }}</h2>
-            <h2>加保成功!</h2>
+            <h2><strong>{{ productName }}</strong></h2>
+            <h2><strong>加保成功!</strong></h2>
             <p>電子保單將以加密附件寄送到您的信箱</p>
             <p>若三日內尚未收到，請與「保戶服務部」聯繫:</p>
             <p>0800-020-060</p>
             <h4>...畫面將於 <span class="blue-text">{{count}}</span> 秒後跳轉至「保險商品頁」... </h4>
-            <!-- <button @click="stopCountdownAndNavigate">回到保險商品頁</button> -->
-             <RouterLink @click="stopCountdownAndNavigate" to="/insuranceproduct">回到保險商品頁</RouterLink>
+             <!-- <RouterLink @click="stopCountdownAndNavigate" to="/insuranceproduct">回到保險商品頁</RouterLink> -->
         </main>
     </div>
 </template>
@@ -18,7 +17,7 @@ import '@/assets/cardStyle.css';
     export default {
         data () {
             return {
-                count: 5,
+                count: 3,
                 timer: null // 保存計時器
             }
         },
@@ -58,7 +57,6 @@ import '@/assets/cardStyle.css';
   flex-direction: column;
   justify-content: center; /* 垂直置中 */
   align-items: center; /* 水平置中 */
-  min-height: 100vh; /* 使内容置中對齊屏幕高度 */
   text-align: center; /* 文字置中 */
 }
 .blue-text {

@@ -16,7 +16,7 @@
               <li v-show="product.guaranteedRenewal === '是'">
                 <strong>提前續保：</strong>
                 <button v-show="product.applyClick === '否'" @click="goToApply(product)">我要申請</button>
-                <button disabled v-show="product.applyClick === '是'">已經申請</button>
+                <button disabled v-show="product.applyClick === '是'">已申請</button>
               </li>
             </ul>
           </div>
