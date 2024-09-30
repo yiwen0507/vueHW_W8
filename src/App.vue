@@ -6,7 +6,7 @@
         <RouterLink to="/homepage">首頁</RouterLink>
         <RouterLink to="/products">保險商品</RouterLink>
         <RouterLink to="/about">關於我們</RouterLink>
-        <a href="#">聯絡我們</a>
+        <RouterLink to="/contact">聯絡我們</RouterLink>
       </nav>
       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     </header>
@@ -24,6 +24,7 @@
           <li><RouterLink to="/homepage">首頁</RouterLink></li>
           <li><RouterLink to="/products">保險商品</RouterLink></li>
           <li><RouterLink to="/alreadypurchased">已購保單</RouterLink></li>
+          <li><a href="#">保戶園地</a></li>
           <li><RouterLink to="/news">最新消息</RouterLink></li>
           <li><RouterLink to="/about">關於南山</RouterLink></li>
         </ul>

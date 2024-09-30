@@ -1,10 +1,12 @@
 <template>
     <div>
     <main>
-          <h1>Home page</h1>
-          <p>Vue HW2</p>
-          <p>姓名: Joanne Kung</p>
-          <p>員工編號: W9015520</p>
+      <strong>
+        <h1>Home page</h1>
+        <p>Vue HW2</p>
+        <p>姓名: Joanne Kung</p>
+        <p>員工編號: W9015520</p>
+      </strong>
     </main>
     </div>
 </template>
