@@ -26,8 +26,8 @@
                 <td><p>{{ product.coverage }}</p></td>
                 <td><p>{{ product.startDate }}</p></td>
                 <td><p>{{ product.endDate }}</p></td>
-                <td :class="{'green-text': product.guaranteedRenewal === '是', 'red-text': product.guaranteedRenewal === '否'}">
-                    <strong>{{ product.guaranteedRenewal }}</strong>
+                <td :class="{ 'green-text': product.guaranteedRenewal === true, 'red-text': product.guaranteedRenewal === false }">
+                    <strong>{{ product.guaranteedRenewal ? '是' : '否' }}</strong>
                 </td>
                 <td>
                     <button type="button" class="btn btn-primary" @click="goToDetail(product)">查看</button>
@@ -51,7 +51,6 @@ import '@/assets/myStyle.css';
                     query: { 
                         code: product.policyCode, 
                         name: product.policyName ,
-                        // details: product.policyDetail
                     } 
                 });
             },
