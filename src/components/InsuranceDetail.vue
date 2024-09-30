@@ -18,7 +18,7 @@
     inject:['details'],
     methods: {
       goBack() {
-        this.$router.push({ path: `/insuranceproduct` });
+        this.$router.push({ path: `/products` });
       }
     },
     computed: {

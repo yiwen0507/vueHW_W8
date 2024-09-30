@@ -24,13 +24,13 @@ import IndexFooter from './components/IndexFooter.vue';
 const router = createRouter({
     history: createWebHistory(),
     routes: [
-        { path: "/", component: NanshanIndex },
-        { path: "/homepage", component: HomePage },
-        { path: "/products", component: InsuranceProducts },
-        { path: "/insuranceproduct", component: InsuranceProducts },
+        { path: "/", component: NanshanIndex},
+        { path: "/homepage", component: HomePage, meta:{breadcrumb: '首頁'}},
+        { path: "/products", component: InsuranceProducts, meta:{breadcrumb: '保險商品'}},
         {
             path: '/alreadypurchased',
             component: AlreadyPurchased,
+            meta:{breadcrumb: '已購保單'},
             children: [
                 {
                     path: '/applysuccess',
@@ -39,19 +39,21 @@ const router = createRouter({
                 },
             ],
         },
-        { path: "/news", component: NewsNanshan },
-        { path: "/about", component: AboutNanshan },
-        { path: "/detail", component: InsuranceDetail },
+        { path: "/news", component: NewsNanshan, meta:{breadcrumb: '最新消息'}},
+        { path: "/about", component: AboutNanshan, meta:{breadcrumb: '關於南山'}},
+        { path: "/detail", component: InsuranceDetail, meta:{breadcrumb: '保單詳情'}},
         { path: "/purchasedsuccess", component: PurchasedSuccess },
         { path: "/applysuccess", component: ApplySuccess },
-        { path: "/contact", component: ContactNanshan},
+        { path: "/contact", component: ContactNanshan, meta:{breadcrumb: '聯絡我們'}},
         {  
             path: "/member", 
             component: MemberIndex,
+            meta:{breadcrumb: '保戶園地'},
             children: [
                 {
                     path: '/memberdata',
                     component: MemberData,
+                    meta:{breadcrumb: '保戶資料'},
                     name: 'data'
                 }
             ]

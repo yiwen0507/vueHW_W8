@@ -25,7 +25,7 @@ import '@/assets/cardStyle.css';
             // 倒數功能
             countDown () {
                 if (this.count === 0) {
-                    this.$router.push('/insuranceproduct');
+                    this.$router.push('/products');
                 } else {
                     // 每秒執行一次
                     this.timer = setTimeout(() => {

@@ -26,7 +26,8 @@ export default {
   provide() {
     return {
       products: this.products,
-      details: this.details
+      details: this.details,
+      member: this.member[0]
     };
   },
   data() {
@@ -73,6 +74,60 @@ export default {
             "天然災害意外身故保險金或喪葬費用保險金，保障金額200萬",
             "特定交通事故重大創傷保險金，保障金額20萬"
           ]
+        }
+      ],
+      member:[
+        {
+          "policyholderName": "令狐沖",
+          "id": "A178957101",
+          "gender": "male",
+          "birthdate": "1985-03-14",
+          "contact_number": "0987-261-657",
+          "email": "abc@icloud.com",
+          "address": "台北市大安區信義路八段108號88樓",
+          "policies": [
+            "A1234567890",
+            "B0987654321",
+            "C1234567892",
+            "D0987654323",
+            "E1234567894",
+            "F0987654325"
+          ],
+          "existing_coverages": [
+            "壽險",
+            "失能/長照險",
+            "意外險",
+            "醫療險",
+            "癌症險",
+            "重大傷病險"
+          ],
+          "policy_expiry_dates": [
+            {
+              "policy_number": "A111222333",
+              "expiry_date": "2025-03-05"
+            },
+            {
+              "policy_number": "A669845795",
+              "expiry_date": "2025-05-10"
+            },
+            {
+              "policy_number": "C879170155",
+              "expiry_date": "2025-07-15"
+            },
+            {
+              "policy_number": "P957167951",
+              "expiry_date": "2024-10-15"
+            },
+            {
+              "policy_number": "E1234567894",
+              "expiry_date": "2024-12-01"
+            },
+            {
+              "policy_number": "Y0212389323",
+              "expiry_date": "2025-01-20"
+            }
+          ],
+          "premium_payment_frequency": "年繳"
         }
       ]
     };
