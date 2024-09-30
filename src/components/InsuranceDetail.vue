@@ -6,7 +6,7 @@
           <button type="button" class="btn btn-primary" @click="goBack">回前頁</button>
         </div>
         <div>
-          <ul v-for="(detail, index) in details" :key="index">
+          <ul v-for="(detail, index) in productDetails" :key="index">
             <main><strong>{{ detail }}</strong></main>
           </ul>
         </div>
@@ -17,6 +17,7 @@
   <script>
   import '@/assets/myStyle.css';
   export default {
+    inject:['details'],
     methods: {
       goBack() {
         this.$router.push({ path: `/insuranceproduct` });
@@ -29,9 +30,10 @@
       productName() {
         return this.$route.query.name;
       },
-      details() {
-        // this.$route.query.details;
-        return this.$route.query.details
+      productDetails() {
+        const product = this.details.find(p => p.policyCode === this.productCode);
+        // 確認是否找到該保單，如果有則返回它的細節
+        return product ? product.claimDetails : [];
       }
     }
   }
