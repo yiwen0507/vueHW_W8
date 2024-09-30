@@ -12,6 +12,12 @@ import InsuranceDetail from './components/InsuranceDetail.vue';
 import PurchasedSuccess from './components/PurchasedSuccess.vue';
 import ApplySuccess from './components/ApplySuccess.vue';
 import ContactNanshan from './components/ContactNanshan.vue';
+import MemberIndex from './components/MemberIndex.vue';
+import MemberData from './components/MemberData.vue';
+import IndexHeader from './components/IndexHeader.vue';
+import IndexSidebar from './components/IndexSidebar.vue';
+import IndexContent from './components/IndexContent.vue';
+import IndexFooter from './components/IndexFooter.vue';
 
 
 // create router
@@ -27,7 +33,7 @@ const router = createRouter({
             component: AlreadyPurchased,
             children: [
                 {
-                    path: 'applysuccess',
+                    path: '/applysuccess',
                     component: ApplySuccess, // Nested route to ApplySuccess.vue
                     name: 'apply',
                 },
@@ -39,9 +45,26 @@ const router = createRouter({
         { path: "/purchasedsuccess", component: PurchasedSuccess },
         { path: "/applysuccess", component: ApplySuccess },
         { path: "/contact", component: ContactNanshan},
+        {  
+            path: "/member", 
+            component: MemberIndex,
+            children: [
+                {
+                    path: '/memberdata',
+                    component: MemberData,
+                    name: 'data'
+                }
+            ]
+        },
     ]
 })
 const app = createApp(App)
+app.component(
+    "IndexHeader", IndexHeader,
+    "IndexSidebar", IndexSidebar,
+    "IndexContent", IndexContent,
+    "IndexFooter", IndexFooter
+)
 app.use(router)
 app.mount('#app')
 

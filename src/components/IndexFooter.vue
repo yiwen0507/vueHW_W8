@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <h1>南山聯絡資訊</h1>
-        <p>0800-020060</p>
-    </div>
+    <footer>
+        <p>© 2024 南山人壽. 保留所有權利.【By Roger Lo】</p>
+    </footer>
 </template>
 
 <script>

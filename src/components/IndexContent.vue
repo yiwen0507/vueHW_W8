@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <h1>南山聯絡資訊</h1>
-        <p>0800-020060</p>
-    </div>
+    <main>
+      <RouterView></RouterView>
+    </main>
 </template>
 
 <script>

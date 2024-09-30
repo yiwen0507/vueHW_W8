@@ -1,10 +1,9 @@
 <template>
     <div>
-      <main>
         <h1>已購買保單</h1>
         <RouterView></RouterView>
         <div class="policy-container">
-          <div class="policy-card" v-for:="(product, index) in products" :key="index">
+          <div class="policy-card" v-for="(product, index) in products" :key="index">
             <h2>{{ product.policyName }}</h2>
             <p>{{ product.policyDesc }}</p>
             <ul >
@@ -20,7 +19,6 @@
             </ul>
           </div>
         </div>
-      </main>
     </div>
   </template>
   

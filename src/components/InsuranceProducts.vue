@@ -1,6 +1,5 @@
 <template>
     <div>
-        <main>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -36,7 +35,6 @@
                 </tr>
             </tbody>
         </table>
-        </main>
     </div>
 </template>
 

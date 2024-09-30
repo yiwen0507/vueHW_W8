@@ -1,9 +1,7 @@
 <template>
     <div>
-        <main>
-            <h1><strong>保戶園地</strong></h1>
-            <RouterView></RouterView>
-        </main>
+        <h1><strong>保戶園地</strong></h1>
+        <RouterView></RouterView>
     </div>
 </template>
 
