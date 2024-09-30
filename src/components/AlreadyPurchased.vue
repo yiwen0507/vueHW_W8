@@ -12,11 +12,10 @@
               <li><strong>保障金額：</strong> {{ product.coverage }}</li>
               <li><strong>售賣起日：</strong> {{ product.startDate }}</li>
               <li><strong>售賣訖日：</strong> {{ product.endDate }}</li>
-              <li><strong>保證續保：</strong> {{ product.guaranteedRenewal }}</li>
-              <li v-show="product.guaranteedRenewal === '是'">
+              <li><strong>保證續保：</strong> {{ product.guaranteedRenewal ? '是' : '否' }}</li>
+              <li v-show="product.guaranteedRenewal === true">
                 <strong>提前續保：</strong>
-                <button v-show="product.applyClick === '否'" @click="goToApply(product)">我要申請</button>
-                <button disabled v-show="product.applyClick === '是'">已申請</button>
+                <button @click="(event) => goToApply(product, event)">我要申請</button>
               </li>
             </ul>
           </div>
@@ -46,21 +45,20 @@
        * 更新sessionStorage
        * 顯示申請成功資訊
        */
-      goToApply(product) {
-        const updatedPolicies = this.products.map((p) => {
-          if (p.policyCode === product.policyCode) {
-            p.applyClick = '是';
-          }
-          return p;
-        });
-        sessionStorage.setItem('purchasedPolicies', JSON.stringify(updatedPolicies));
+      goToApply(product, event) {
+        // 按鈕 DOM 元素
+        const buttonElement = event.target;
+        // 修改按鈕狀態
+        buttonElement.textContent = '已申請';
+        buttonElement.disabled = true;
 
         this.$router.push(
-          { name: 'apply',
+          { 
+            name: 'apply',
             query:{
               name: product.policyName
             }
-          });
+        });
       }
     }
 };

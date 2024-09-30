@@ -32,7 +32,6 @@
       },
       productDetails() {
         const product = this.details.find(p => p.policyCode === this.productCode);
-        // 確認是否找到該保單，如果有則返回它的細節
         return product ? product.claimDetails : [];
       }
     }

@@ -24,7 +24,7 @@
           <li><RouterLink to="/homepage">首頁</RouterLink></li>
           <li><RouterLink to="/products">保險商品</RouterLink></li>
           <li><RouterLink to="/alreadypurchased">已購保單</RouterLink></li>
-          <li><a href="#">保戶園地</a></li>
+          <li><RouterLink to="/member">保戶園地</RouterLink></li>
           <li><RouterLink to="/news">最新消息</RouterLink></li>
           <li><RouterLink to="/about">關於南山</RouterLink></li>
         </ul>
@@ -64,8 +64,7 @@ export default {
           coverage: '1230000 元',
           startDate: '2020-10-10',
           endDate: '2030-10-10',
-          guaranteedRenewal: '是',
-          applyClick: '否'
+          guaranteedRenewal: true,
         },
         {
           policyCode: 'DHI',
@@ -75,8 +74,7 @@ export default {
           coverage: '2000000 元',
           startDate: '2022-10-10',
           endDate: '2025-10-10',
-          guaranteedRenewal: '否',
-          applyClick: '否'
+          guaranteedRenewal: false,
         }
       ],
       details: [
