@@ -39,17 +39,9 @@
   <style lang="scss" scoped>
   .header-container {
     display: flex;
-    justify-content: space-between; /* 标题与按钮两端对齐 */
-    align-items: center; /* 垂直居中对齐 */
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 20px;
-  }
-  
-  .header-container h1 {
-    margin: 0; /* 清除默认的外边距 */
-  }
-  
-  .header-container button {
-    margin-left: 300px;
   }
   </style>
   

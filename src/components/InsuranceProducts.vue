@@ -29,8 +29,10 @@
                     <strong>{{ product.guaranteedRenewal ? '是' : '否' }}</strong>
                 </td>
                 <td>
-                    <button type="button" class="btn btn-primary" @click="goToDetail(product)">查看</button>
-                    <button type="button" class="btn btn-primary" @click="goToSuccess(product)">購買</button>
+                    <div class="btn-container">
+                        <button type="button" class="btn btn-primary" @click="goToDetail(product)">查看</button>
+                        <button type="button" class="btn btn-primary" @click="goToSuccess(product)">購買</button>
+                    </div>
                 </td>
                 </tr>
             </tbody>
@@ -82,4 +84,11 @@ import '@/assets/myStyle.css';
 .green-text{
     color: green;
 }
+
+.btn-container {
+    display: flex;
+    gap: 20px; /* 設置按鈕之間的空隙 */
+    margin-bottom: 20px;
+}
+
 </style>

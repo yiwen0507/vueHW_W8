@@ -11,13 +11,13 @@
     </header>
     <div class="breadcrumbs">
         <nav> 
-            <P><RouterLink to="/homepage">首頁</RouterLink> </P>
-            <P v-for="(crumb, index) in breadcrumbs" :key="index">
+            <RouterLink to="/homepage">首頁</RouterLink>
+            <div v-for="(crumb, index) in breadcrumbs" :key="index">
                 <RouterLink v-if="index !== breadcrumbs.length && crumb.meta.breadcrumb !== '首頁'" :to="crumb.path">
                     &gt;
                    {{ crumb.meta.breadcrumb }}
                 </RouterLink>
-            </P>
+            </div>
         </nav>
   </div>
 </template>

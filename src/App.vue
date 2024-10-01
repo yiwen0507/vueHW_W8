@@ -78,7 +78,7 @@ export default {
       ],
       member:[
         {
-          "policyholderName": "令狐沖",
+          "policyholder_name": "令狐沖",
           "id": "A178957101",
           "gender": "male",
           "birthdate": "1985-03-14",
