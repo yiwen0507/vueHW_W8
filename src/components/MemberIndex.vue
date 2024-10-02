@@ -1,7 +1,6 @@
 <template>
     <div>
         <h1><strong>保戶園地</strong></h1>
-        <button @click="goToMember">保戶資料</button>
         <RouterView></RouterView>
     </div>
 </template>

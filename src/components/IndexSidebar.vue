@@ -5,7 +5,8 @@
             <li><RouterLink to="/homepage">首頁</RouterLink></li>
             <li><RouterLink to="/products">保險商品</RouterLink></li>
             <li><RouterLink to="/alreadypurchased">已購保單</RouterLink></li>
-            <li><RouterLink to="/member">保戶園地</RouterLink></li>
+            <li><RouterLink to="/member" @click="goToMember">保戶園地</RouterLink></li>
+            <li><RouterLink to="/member/memberdata" v-if="isClick === true">&emsp;-保戶資料</RouterLink></li>
             <li><RouterLink to="/news">最新消息</RouterLink></li>
             <li><RouterLink to="/about">關於南山</RouterLink></li>
         </ul>
@@ -16,7 +17,14 @@
 
 <script>
     export default {
-        
+        data(){return{
+            isClick: false,
+        }},
+        methods:{
+            goToMember(){
+                this.isClick = !this.isClick
+            }
+        }
     }
 </script>
 
