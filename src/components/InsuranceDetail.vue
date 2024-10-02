@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="header-container">
-          <h1>保單詳情-【{{ productCode }}_{{ productName }}】</h1>
+          <h1>保單詳情-【{{ productName }}_{{ productCode }}】</h1>
           <button type="button" class="btn btn-primary" @click="goBack">回前頁</button>
         </div>
         <div>

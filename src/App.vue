@@ -2,8 +2,14 @@
   <div>
     <IndexHeader></IndexHeader>
     <div id="container">
-      <IndexSidebar></IndexSidebar>
-      <IndexContent></IndexContent>
+      <aside>
+        <IndexSidebar></IndexSidebar>
+      </aside>
+      <button type="button" id="toggle-sidebar">&lt;&lt;</button>
+      <!-- 初始為收合狀態的按鈕 -->
+      <main>
+        <IndexContent></IndexContent>
+      </main>
     </div>
     <IndexFooter></IndexFooter>
   </div>
@@ -38,21 +44,31 @@ export default {
           policyCode: '20NNPL',
           policyName: '南山人壽新健康終身保險',
           policyDesc: '一般壽險/投保年齡0-60/保障終身',
-          pricePerYear: '1200 元',
-          coverage: '1230000 元',
-          startDate: '2020-10-10',
-          endDate: '2030-10-10',
+          pricePerYear: '810 NTD',
+          coverage: '100萬',
+          startDate: '2021-01-01',
+          endDate: '2026-01-01',
           guaranteedRenewal: true,
         },
         {
           policyCode: 'DHI',
           policyName: '南山人壽意外傷害險',
           policyDesc: '意外日額/投保年齡0-64/最高保障至75歲',
-          pricePerYear: '1400 元',
-          coverage: '2000000 元',
-          startDate: '2022-10-10',
-          endDate: '2025-10-10',
+          pricePerYear: '540 NTD',
+          coverage: '200萬',
+          startDate: '2018-03-08',
+          endDate: '2030-05-10',
           guaranteedRenewal: false,
+        },
+        {
+          policyCode: '1HIR',
+          policyName: '南山人壽日臻幸福住院日額健康保險附約',
+          policyDesc: '日額型/投保年齡0-75歲/最高保障至85歲',
+          pricePerYear: '1330 NTD',
+          coverage: '150萬',
+          startDate: '2023-08-08',
+          endDate: '2032-07-07',
+          guaranteedRenewal: true,
         }
       ],
       details: [
@@ -73,6 +89,15 @@ export default {
             "意外重大燒燙傷保險金，保障金額50萬",
             "天然災害意外身故保險金或喪葬費用保險金，保障金額200萬",
             "特定交通事故重大創傷保險金，保障金額20萬"
+          ]
+        },
+        {
+          policyCode: '1HIR',
+          policyName: '南山人壽日臻幸福住院日額健康保險附約',
+          claimDetails: [
+            "若病房費每日為3000元，則住院5天總共可申請 3000 x 5天 = 15000元",
+            "日額型：按投保日額乘上一定比例理賠",
+            "實支實付：每次限額內理賠住院前後門診產生之費用"
           ]
         }
       ],
@@ -135,3 +160,8 @@ export default {
 };
 </script>
 
+<style>
+  aside{
+    flex-shrink: 0; /* 防止縮小 */
+  }
+</style>

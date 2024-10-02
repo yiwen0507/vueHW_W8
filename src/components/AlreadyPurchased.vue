@@ -1,7 +1,9 @@
 <template>
   <div>
     <h1>已購買保單</h1>
-    <p v-show="showSuccess === true" class="red-text">已申請提前續保:【"{{productName}}"】，請等待專人聯繫</p>
+    <div class="red-background">
+      <strong><p v-show="showSuccess === true" class="red-text">已申請提前續保:【"{{productName}}"】，請等待專人聯繫</p></strong>
+    </div>
     <!-- <RouterView></RouterView> -->
     <div class="policy-container">
       <AlreadyPurchasedProduct
@@ -15,6 +17,7 @@
 </template>
   
 <script>
+import '@/assets/myStyle.css';
 import '@/assets/cardStyle.css';
 import AlreadyPurchasedProduct from './AlreadyPurchasedProduct.vue';
 
@@ -64,5 +67,9 @@ export default {
 
 .red-text {
     color: red;
+}
+
+.red-background{
+  background-color: rgb(255, 227, 231);
 }
 </style>

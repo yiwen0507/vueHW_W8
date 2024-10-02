@@ -17,19 +17,19 @@
             </thead>
             <tbody>
                 <tr v-for="(product, index) in products" :key="index">
-                <td><p>{{ index + 1 }}</p></td>
-                <td><p>{{ product.policyCode }}</p></td>
-                <td><p>{{ product.policyName }}</p></td>
-                <td><p>{{ product.policyDesc }}</p></td>
-                <td><p>{{ product.pricePerYear }}</p></td>
-                <td><p>{{ product.coverage }}</p></td>
-                <td><p>{{ product.startDate }}</p></td>
-                <td><p>{{ product.endDate }}</p></td>
+                <td>{{ index + 1 }}</td>
+                <td>{{ product.policyCode }}</td>
+                <td>{{ product.policyName }}</td>
+                <td>{{ product.policyDesc }}</td>
+                <td>{{ product.pricePerYear }}</td>
+                <td>{{ product.coverage }}</td>
+                <td>{{ product.startDate }}</td>
+                <td>{{ product.endDate }}</td>
                 <td :class="{ 'green-text': product.guaranteedRenewal === true, 'red-text': product.guaranteedRenewal === false }">
                     <strong>{{ product.guaranteedRenewal ? '是' : '否' }}</strong>
                 </td>
                 <td>
-                    <div class="btn-container">
+                    <div>
                         <button type="button" class="btn btn-primary" @click="goToDetail(product)">查看</button>
                         <button type="button" class="btn btn-primary" @click="goToSuccess(product)">購買</button>
                     </div>
@@ -83,12 +83,6 @@ import '@/assets/myStyle.css';
 }
 .green-text{
     color: green;
-}
-
-.btn-container {
-    display: flex;
-    gap: 20px; /* 設置按鈕之間的空隙 */
-    margin-bottom: 20px;
 }
 
 </style>

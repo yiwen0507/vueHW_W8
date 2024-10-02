@@ -7,7 +7,8 @@
             <p>若三日內尚未收到，請與「保戶服務部」聯繫:</p>
             <p>0800-020-060</p>
             <h4>...畫面將於 <span class="blue-text">{{count}}</span> 秒後跳轉至「保險商品頁」... </h4>
-             <!-- <RouterLink @click="stopCountdownAndNavigate" to="/insuranceproduct">回到保險商品頁</RouterLink> -->
+             <!--【Bouns: 可以點擊回保險商品頁，不需等待倒數時間】 -->
+            <RouterLink @click="stopCountdown" to="/insuranceproduct">回到保險商品頁</RouterLink>
         </main>
     </div>
 </template>
@@ -34,10 +35,10 @@ import '@/assets/cardStyle.css';
                     }, 1000);
                 }
             },
-            stopCountdownAndNavigate() {
-                // 取消倒數
+            //【Bouns: 取消倒數】
+            stopCountdown() {
                 clearTimeout(this.timer);
-                // this.$router.push('/insuranceproduct');
+                this.$router.push('/products');
             }
         },
         computed: {

@@ -18,6 +18,10 @@ import IndexHeader from './components/IndexHeader.vue';
 import IndexSidebar from './components/IndexSidebar.vue';
 import IndexContent from './components/IndexContent.vue';
 import IndexFooter from './components/IndexFooter.vue';
+import AlreadyPurchasedProduct from './components/AlreadyPurchasedProduct.vue';
+import MemberDataPolicyholder from './components/MemberDataPolicyholder.vue';
+import MemberDataPolicy from './components/MemberDataPolicy.vue';
+import MemberDataPolicyExpiry from './components/MemberDataPolicyExpiry.vue';
 
 
 // create router
@@ -27,17 +31,14 @@ const router = createRouter({
         { path: "/", component: NanshanIndex},
         { path: "/homepage", component: HomePage, meta:{breadcrumb: '首頁'}},
         { path: "/products", component: InsuranceProducts, meta:{breadcrumb: '保險商品'}},
-        {
-            path: '/alreadypurchased',
-            component: AlreadyPurchased,
-            meta:{breadcrumb: '已購保單'},
-            children: [
-                {
-                    path: '/applysuccess',
-                    component: ApplySuccess, // Nested route to ApplySuccess.vue
-                    name: 'apply',
-                },
-            ],
+        { path: '/alreadypurchased', component: AlreadyPurchased, meta:{breadcrumb: '已購保單'},
+            // children: [
+            //     {
+            //         path: '/applysuccess',
+            //         component: ApplySuccess, // Nested route to ApplySuccess.vue
+            //         name: 'apply',
+            //     },
+            // ],
         },
         { path: "/news", component: NewsNanshan, meta:{breadcrumb: '最新消息'}},
         { path: "/about", component: AboutNanshan, meta:{breadcrumb: '關於南山'}},
@@ -51,7 +52,7 @@ const router = createRouter({
             meta:{breadcrumb: '保戶園地'},
             children: [
                 {
-                    path: '/memberdata',
+                    path: '/member/memberdata',
                     component: MemberData,
                     meta:{breadcrumb: '保戶資料'},
                     name: 'data'
@@ -65,7 +66,11 @@ app.component(
     "IndexHeader", IndexHeader,
     "IndexSidebar", IndexSidebar,
     "IndexContent", IndexContent,
-    "IndexFooter", IndexFooter
+    "IndexFooter", IndexFooter,
+    "AlreadyPurchasedProduct", AlreadyPurchasedProduct,
+    "MemberDataPolicyholder",MemberDataPolicyholder,
+    "MemberDataPolicy", MemberDataPolicy,
+    "MemberDataPolicyExpiry", MemberDataPolicyExpiry    
 )
 app.use(router)
 app.mount('#app')
