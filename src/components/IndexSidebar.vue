@@ -9,7 +9,8 @@
         <li><RouterLink to="/news">最新消息</RouterLink></li>
         <li><RouterLink to="/about">關於南山</RouterLink></li>
     </ul>
-    
+    <!-- 初始為收合狀態的按鈕 -->
+    <button type="button" id="toggle-sidebar">&lt;&lt;</button>
 </template>
 
 <script>
@@ -25,6 +26,9 @@
     }
 </script>
 
-<style lang="scss" scoped>
-
+<style scoped>
+#toggle-sidebar {
+    top: 8px;
+    left: 180px;
+}
 </style>

@@ -5,8 +5,6 @@
       <aside>
         <IndexSidebar></IndexSidebar>
       </aside>
-      <button type="button" id="toggle-sidebar">&lt;&lt;</button>
-      <!-- 初始為收合狀態的按鈕 -->
       <main>
         <IndexContent></IndexContent>
       </main>
