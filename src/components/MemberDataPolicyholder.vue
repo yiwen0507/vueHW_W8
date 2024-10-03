@@ -6,13 +6,11 @@
         <div>
             <label for="policyholder_name">姓名</label>
             <input :disabled="isDisable" type="text" id="policyholder_name" v-model="policyholder_name" @blur="validateName"/>
-            <!-- <input :disabled="isDisable" type="text" id="policyholder_name" v-model="policyholder_name"/> -->
         </div>
         <!-- 身分證 -->
         <div>
             <label for="id">身分證號</label>
             <input :disabled="isDisable" type="text" id="id" v-model="id" @blur="validateId"/>
-            <!-- <input :disabled="isDisable" type="text" id="id" v-model="id"/> -->
         </div>
         <!-- 性別 -->
         <div>
@@ -31,13 +29,11 @@
         <div>
             <label for="contact_number">聯絡電話</label>
             <input :disabled="isDisable" type="text" id="contact_number" v-model="contact_number" @blur="validateNumber"/>
-            <!-- <input :disabled="isDisable" type="text" id="contact_number" v-model="contact_number"/> -->
         </div>
         <!-- 電子郵件 -->
         <div>
             <label for="email">電子郵件</label>
             <input :disabled="isDisable" type="email" id="email" v-model="email" @blur="validateEmail"/>
-            <!-- <input :disabled="isDisable" type="email" id="email" v-model="email" /> -->
         </div>
         <!-- 住址 -->
         <div>
@@ -95,6 +91,7 @@
                 this.isEdit = !this.isEdit
             },
             save(){
+                // 資料驗證
                 this.validateName()
                 this.validateId()
                 this.validateNumber()

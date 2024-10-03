@@ -8,14 +8,18 @@
         <button @click="DESC">DESC</button>
         <table class="table table-bordered">
             <thead>
-                <th>保單號碼</th>
-                <th>到期日</th>
+                <tr>
+                    <th>保單號碼</th>
+                    <th>到期日</th>
+                </tr>
             </thead>
-            <tbody v-for="(policy_expiry_date, index) in member.policy_expiry_dates" :key="index">
-                <td>{{ policy_expiry_date.policy_number }}</td>
-                <td :class="{'red-text': policy_expiry_date.expiry_date === minExpiryDate}">
-                    {{ policy_expiry_date.expiry_date }}
-                </td>
+            <tbody>
+                <tr v-for="(policy_expiry_date, index) in member.policy_expiry_dates" :key="index">
+                    <td>{{ policy_expiry_date.policy_number }}</td>
+                    <td :class="{'red-text': policy_expiry_date.expiry_date === minExpiryDate}">
+                        {{ policy_expiry_date.expiry_date }}
+                    </td>
+                </tr>
             </tbody>
         </table>
     </form>
@@ -25,23 +29,23 @@
     export default {
         inject:['member'],
         data() {return {
-            minExpiryDate: ""   // 紀錄最快到期日
+            minExpiryDate: ""
         }},
         methods: {
             ASC() {
                 this.member.policy_expiry_dates.sort((a, b) => {
-                    // 将日期字符串转为 Date 对象进行比较
                     const dateA = new Date(a.expiry_date);
                     const dateB = new Date(b.expiry_date);
-                    return dateA - dateB; // 升序排序
+                    // 升序排序
+                    return dateA - dateB; 
                 });
             },
             DESC() {
                 this.member.policy_expiry_dates.sort((a, b) => {
-                    // 将日期字符串转为 Date 对象进行比较
                     const dateA = new Date(a.expiry_date);
                     const dateB = new Date(b.expiry_date);
-                    return dateB - dateA; // 升序排序
+                    // 降序排序
+                    return dateB - dateA; 
                 });
             },
             findMinExpiryDate() {
@@ -51,13 +55,12 @@
                         minDate = policy.expiry_date;
                     }
                 });
-                // 将最小的日期存储为 minExpiryDate
+                // 紀錄minExpiryDate
                 this.minExpiryDate = minDate;
             }
         },
         mounted() {
             // 找到最小的日期
-            
             this.findMinExpiryDate();
         }
     }

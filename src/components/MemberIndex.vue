@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1><strong>保戶園地</strong></h1>
+        <p>圖像操作介面，點擊側邊欄位顯示內容</p>
         <RouterView></RouterView>
     </div>
 </template>
