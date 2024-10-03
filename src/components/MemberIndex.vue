@@ -19,5 +19,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-/* 你可以在這裡添加樣式 */
 </style>

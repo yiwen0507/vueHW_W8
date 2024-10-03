@@ -43,7 +43,7 @@ const router = createRouter({
         { path: "/news", component: NewsNanshan, meta:{breadcrumb: '最新消息'}},
         { path: "/about", component: AboutNanshan, meta:{breadcrumb: '關於南山'}},
         { path: "/detail", component: InsuranceDetail, meta:{breadcrumb: '保單詳情'}},
-        { path: "/purchasedsuccess", component: PurchasedSuccess },
+        { path: "/purchasedsuccess", component: PurchasedSuccess, meta:{breadcrumb: '保險商品'} },
         { path: "/applysuccess", component: ApplySuccess },
         { path: "/contact", component: ContactNanshan, meta:{breadcrumb: '聯絡我們'}},
         {  
