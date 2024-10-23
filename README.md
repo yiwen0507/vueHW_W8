@@ -1,4 +1,4 @@
-# vue3-hw-week7-w9015520-joanne
+# vue3-hw-week7+8
 
 ## Project setup
 ```
